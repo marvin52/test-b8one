@@ -7,8 +7,9 @@ To run this project on your machine you must have the following dependecies inst
 
 ### Installing and running
 
-After clonning the repository you will be able to run ```npm start``` and visit ```http://localhost:3000``` to use the application.
+After clonning the repository and installing the dependecies you will be able to run ```npm start``` and visit ```http://localhost:3000``` to use the application.
 
+        $ git clone git@github.com:marvin52/test-b8one.git && cd test-b8one
         $ npm install
         $ npm start
 
