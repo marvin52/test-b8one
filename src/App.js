@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Product from './components/Product';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './assets/css/App.css';
+
+
+export default class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      products: [
+        {
+          id: 1,
+          title: `Monitor LED 27'' Gamer Curvo Samsung  1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50`,
+          image: `image.png`,
+          prevPrice: 2813.99,
+          todayPrice: 2599.00,
+          wishList: false
+        },
+        {
+          id: 2,
+          title: `Monitor LED 27'' Gamer Curvo Samsung  1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50`,
+          image: `image.png`,
+          prevPrice: 2813.99,
+          todayPrice: 2599.00,
+          wishList: false
+        }
+      ]
+    }
+    this.actionWishList = this.actionWishList.bind(this)
+  }
+
+  
+  actionWishList(product){
+    let products =  this.state.products.map(_ => {
+      let { title, image, prevPrice, todayPrice, id } = _;
+
+      return {
+        id, title, image, prevPrice, todayPrice,
+        wishList: id === product.id ? _.wishList === true ? false :  true : _.wishList,
+      }
+    });
+  
+    this.setState({ products });
+  }
+
+
+  render(){
+    return (
+      <div className="App">
+          {this.state.products.map( ( _, i ) =>
+              <Product wishList={this.actionWishList} product={_} key={i} />
+          )}
+      </div>
+    );
+  }
 }
 
-export default App;

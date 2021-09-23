@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;800&display=swap');
+
+html, body {
+    background-color: #eaebee;
+    padding-top: 10px;
+}
+.App {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.product {
+    position: relative;
+    background-color: white;
+    max-width: 260px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+}
+.product__image {
+    width: 240px;
+    margin: auto auto;
+    display: block;
+}
+.product__title {
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 5px;
+}
+.product__prev-price {
+    font-size: 12px;
+    color: #b5b5b6;
+    text-decoration: line-through;
+}
+.product__today-price {
+    font-size: 17px;
+    color: #DA4B4F;
+    font-weight: 600; 
+}
+.product__conditions {
+    font-size: 13px;
+    color: #848587;
+}
+.product__conditions span {
+    font-weight: 600;
+    color: black;
+}
+.product__add-button {
+    cursor: pointer;
+    background: #40B25C;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100%;
+    margin-top: 10px;
+}
+.product__add-button:hover {
+    background: #1C6C3E;
+}
+.product__add-button i {
+    margin-right: 10px;
+}
+.product__add-button--wl-in {
+    background-color: #A3F9B9;
+    color: #1C1C1C;
+}
+
+.product__add-button--wl-in:hover {
+    background-color: #81d797;
+}
+.product__add-heart-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: 0px;
+    cursor: pointer;
+}
+.product__add-heart-btn--wl-out:hover {
+    background-color: #FEE5EC;
+    color: #DA4B4F;
+}
+
+.product__add-heart-btn--wl-in {
+    background-color: #DA4B4F;
+    color: #fff;
+}
+
+.product__add-heart-btn--wl-in:hover {
+    background-color: #C22539;
+}
